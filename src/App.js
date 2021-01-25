@@ -30,12 +30,10 @@ function App() {
   const tl = new TimelineLite();
 
   React.useEffect(() => {
-    axios
-      .get(CORS_URL + URL_HOST, config)
-      .then((data) => {
-        setContacts(data.data.contacts);
-      })
-      .then(() => cardSlideIn());
+    axios.get(CORS_URL + URL_HOST, config).then((data) => {
+      setContacts(data.data.contacts);
+      cardSlideIn();
+    });
     // eslint-disable-next-line
   }, []);
 
